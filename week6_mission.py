@@ -3,14 +3,19 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+import os
 
-# 프로젝트에 포함된 NanumGothic 폰트 등록
-font_path = "NanumGothic.ttf"  # 같은 폴더에 있으므로 파일명만 지정
+# 절대 경로 폰트 설정
+font_path = os.path.join(os.path.dirname(__file__), "NanumGothic.ttf")
 font = fm.FontProperties(fname=font_path).get_name()
-st.write("폰트 로딩됨:", font)
 
 plt.rc('font', family=font)
 plt.rcParams['axes.unicode_minus'] = False
+
+# 🔥 seaborn도 같은 폰트를 쓰도록 강제 적용
+sns.set(font=font)
+
+st.write("폰트 로딩됨:", font)
 
 
 # 1. 데이터 로드 (ANSI/CP949 인코딩 적용)
