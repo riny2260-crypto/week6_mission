@@ -3,4 +3,3 @@ pandas
 seaborn
 matplotlib
 fonttools
-https://github.com/naver/nanumfont/blob/master/NanumGothic.ttf?raw=true

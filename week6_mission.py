@@ -58,3 +58,11 @@ except FileNotFoundError:
     st.error("파일을 찾을 수 없습니다. '6주차_실습4.csv' 파일이 같은 폴더에 있는지 확인해주세요.")
 except Exception as e:
     st.error(f"오류가 발생했습니다: {e}")
+
+    import matplotlib
+    import shutil
+
+    font_dir = matplotlib.get_data_path() + '/fonts/ttf'
+    shutil.copyfile('NanumGothic.ttf', font_dir + '/NanumGothic.ttf')
+    fm._rebuild()
+    plt.rc('font', family='NanumGothic')
