@@ -2,9 +2,13 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
-# 한글 폰트 설정 (Windows 환경 기준)
-plt.rc('font', family='Malgun Gothic')
+# 프로젝트에 포함된 NanumGothic 폰트 등록
+font_path = "NanumGothic.ttf"  # 같은 폴더에 있으므로 파일명만 지정
+font = fm.FontProperties(fname=font_path).get_name()
+
+plt.rc('font', family=font)
 plt.rcParams['axes.unicode_minus'] = False
 
 
